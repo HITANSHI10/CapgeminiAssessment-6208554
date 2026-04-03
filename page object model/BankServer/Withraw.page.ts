@@ -37,14 +37,14 @@ class Withdraw{
         await this.Dropdown.selectOption({label : fullName})
         await this.LoginButton.click()
         await this.DepositAmount.click()
-        await this.DepositMoney.fill(data1.Deposit)
+        await this.DepositMoney.fill(data1.Deposit.toString())
         await this.DepositButton.click()
         await expect(this.message).toHaveText('Deposit Successful');
     }
 
     async withdraww(){
         await this.WithdrawAmount.click()
-        await this.WithdrawMoney.fill(data1.Withdraw)
+        await this.WithdrawMoney.fill(data1.Withdraw.toString())
         await this.WithdrawButton.click()
         await expect(this.message).toHaveText('Transaction successful');
     }
